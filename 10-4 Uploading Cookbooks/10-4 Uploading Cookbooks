@@ -1,0 +1,21 @@
+# 10-4 Uploading Cookbooks
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after configuring the ~/chef-repo directory
+# and downloading the /cookbooks to your local machine
+
+cd ~/chef-repo
+ls
+ls cookbooks/
+ls -a
+ls .chef/
+cat .chef/knife.rb
+knife --help
+knife client list
+knife ssl check
+knife cookbook --help
+knife cookbook list
+knife cookbook upload workstation
+knife cookbook upload apache
+knife cookbook list

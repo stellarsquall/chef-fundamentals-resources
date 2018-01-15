@@ -1,0 +1,35 @@
+# 13-3 Methods for Creating Roles
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+knife role --help
+knife role list
+ls roles/
+cat roles/starter.rb
+nano roles/web.rb
+knife role from file roles/web.rb
+knife role list
+knife role show web
+knife node show web1
+knife node run_list set web1 "role[web]"
+knife node show web1
+knife node run_list set web2 "role[web]"
+knife node show web2
+vagrant ssh web1
+knife node show web1
+vagrant ssh web2
+knife node show web2
+
+
+# run these commands on the web1 vagrant instance
+
+vagrant@web1$ sudo chef-client
+vagrant@web1$ exit
+
+# run these commands on the web2 vagrant instance
+
+vagrant@web2$ sudo chef-client
+vagrant@web2$ exit

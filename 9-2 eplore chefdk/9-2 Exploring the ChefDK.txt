@@ -1,0 +1,24 @@
+# 9-2 Exploring the ChefDK
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands from your vagrant or cloud CentOS 7 instance after logging in with 'vagrant ssh'
+
+cd ~
+chef -v
+which chef
+which ruby
+ruby -v
+chef exec ruby -c cookbooks/apache/recipes/server.rb
+chef env
+chef shell-init
+chef --help
+
+# run these commands on your local machine
+
+cd ~
+chef -v
+which chef
+which ruby
+ruby -v
+chef exec ruby -v

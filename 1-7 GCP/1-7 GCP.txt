@@ -1,0 +1,33 @@
+# 1-7 Configuring Your Development Environment - Google Compute Engine
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+
+# run these commands to ensure you're setup properly.
+# Commands are demonstrated on a MacOS terminal. If on a Windows machine, commands
+# for navigation and file manipulation may vary.
+# If unable to locate any of the tools, please ensure that your system path is 
+# properly configured as documented in the setup pdf.
+
+# all commands assume working out of the home directory, ~/
+
+# Connect to the cloud instance using the Cloud Console, or follow the 
+# commands below to connect with an ssh client
+cd ~
+ssh-keygen -t rsa -b 2048 -f ~/.ssh/gce
+cat ~/.ssh/gce.pub
+
+# After locating username and public ipaddress in the cloud console
+ssh -i 	~/.ssh/gce username@PUBLIC_IP
+
+
+# Run these commands on the cloud instance after connecting with ssh
+username@centos7$ curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 0.18.30
+username@centos7$ chef --version
+username@centos7$ sudo yum install nano -y
+username@centos7$ sudo yum install vim -y
+username@centos7$ exit
+
+
+# when you're done with the exercises for the moment, exit the machine
+username@centos7$ exit
+
+# or consider destroying the cloud instance. Remember, these cost money over time!

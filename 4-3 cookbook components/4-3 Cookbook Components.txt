@@ -1,0 +1,16 @@
+# 4-3 Cookbook Components
+# commands that involve editing files assume nano as the text editor
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+chef --help
+chef generate --help
+chef generate cookbook --help
+mkdir cookbooks
+chef generate cookbook coobooks/workstation
+tree
+cat cookbooks/workstation/metadata.rb
+cat cookbooks/workstation/README.md
+cat cookbooks/workstation/recipes/default.rb
+mv setup.rb cookbooks/workstation/recipes/

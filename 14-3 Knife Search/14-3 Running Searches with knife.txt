@@ -1,0 +1,22 @@
+# 14-3 Running Searches with knife
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+knife node show web1
+knife node show web1 -a node
+knife node show web1 -a ipaddress
+knife node show web1 -a memory.total
+knife search --help
+knife search node "*:*"
+knife search node "*:*" -a ipaddress
+knife search node "name:web1"
+knife search node "name:*"
+knife search node "name:web"
+knife search node "name:web" -a ipaddress
+knife search role "*:*"
+knife search role "*:*" -a name
+knife search node "role:web AND recipes:apache"
+knife search node "role:web" -a ipaddress

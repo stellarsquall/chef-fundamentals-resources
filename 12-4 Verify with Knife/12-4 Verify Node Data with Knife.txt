@@ -1,0 +1,22 @@
+# 12-4 Verify Node Data with Knife
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+knife node --help
+knife node list
+knife cookbook list
+knife cookbook show myhaproxy
+knife cookbook show myhaproxy 0.2.0
+knife node show --help
+knife node show web1
+knife node show web1 -a ipaddress
+knife node show web1 -a hostname
+knife node show load-balancer -a haproxy
+nano cookbooks/myhaproxy/recipes/default.rb
+knife node show load-balancer -a haproxy.members
+knife node show load-balancer -a cpu.0.mhz
+knife node show load-balancer -a memory.total
+knife node show load-balancer -a cookbooks

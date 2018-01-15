@@ -1,0 +1,14 @@
+# 8-3 remote_file
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+nano cookbooks/apache/templates/index.html.erb
+nano cookbooks/apache/recipes/server.rb
+sudo chef-client -zr "recipe[apache]"
+exit
+
+localhost$ nano Vagrantfile
+localhost$ vagrant reload
+localhost$ curl localhost:9000

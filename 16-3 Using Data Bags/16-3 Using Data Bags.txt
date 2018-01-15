@@ -1,0 +1,25 @@
+# 16-3 Using Data Bags
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+ls
+mkdir data_bags
+mkdir data_bags/users
+knife data bag --help
+knife data bag list
+knife data bag create users
+knife data bag from file users data_bags/users/user1.json data_bags/users/user2.json 
+knife data bag list
+knife data bag show users
+knife data bag show users/user1
+knife search users "*:*"
+knife search users "platform:centos"
+knife search users "platform:centos" -a comment
+mkdir data_bags/groups
+knife data bag create groups
+knife data bag from file groups data_bags/groups/group1.json
+knife data bag show groups
+knife data bag show groups group1

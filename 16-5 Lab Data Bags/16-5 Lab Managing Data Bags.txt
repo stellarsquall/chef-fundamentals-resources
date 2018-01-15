@@ -1,0 +1,30 @@
+# 16-5 Lab: Managing Data Bags
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+knife data bag show users
+knife data bag show groups
+knife data bag from file users data_bags/users/anthony.json data_bags/users/gordon.json data_bags/users/julia.json
+knife data bag show users
+knife data bag from file groups data_bags/groups/chefs.json
+knife data bag show groups
+knife search users "*:*"
+knife search users "*:*" -a home
+knife search groups "platform:centos"
+knife search groups "platform:centos" -a members
+cd cookbooks/myusers/
+berks upload
+berks upload --force
+cd ~/chef-repo
+knife role from file roles/web.rb roles/base.rb roles/load-balancer.rb
+vagrant ssh web1
+
+# run these commands on the web1 vagrant instance
+
+vagrant@web1$ sudo chef-client
+vagrant@web1$ cat /etc/passwd
+vagrant@web1$ cat /etc/group
+vagrant@web1$ exit

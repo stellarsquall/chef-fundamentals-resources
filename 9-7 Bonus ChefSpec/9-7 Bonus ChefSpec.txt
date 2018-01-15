@@ -1,0 +1,19 @@
+# 9-7 Bonus: ChefSpec
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# these commands are run from the LOCAL machine. 
+# Please note that your machine may not be configured
+# for ChefSpec development like in the demoed video.
+# https://docs.chef.io/chefspec.html
+# https://github.com/sethvargo/chefspec
+
+cd ~/cookbooks/apache
+pwd
+tree
+chef generate recipe test
+tree
+chef exec rspec
+nano spec/unit/recipes/default_spec.rb
+nano spec/spec_helper.rb
+chef exec rspec spec/unit/recipes/default_spec.rb

@@ -1,0 +1,15 @@
+# 13-5 Converge Using knife ssh
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+knife winrm --help
+knife ssh --help
+vagrant ssh-config
+knife ssh localhost 'sudo chef-client' --manual-list --ssh-port WEB1_PORT --ssh-user vagrant --identity-file /PATH/TO/WEB1_KEY/
+knife ssh localhost 'sudo chef-client' -m -p WEB1_PORT -x vagrant -i /PATH/TO/WEB1_KEY/
+knife ssh "*:*" -x chef -P chef "sudo chef-client"
+knife ssh "*:*" -x chef -i /PATH/TO/AWS_KEY "sudo chef-client"
+knife ssh "role:web" -x chef -P chef "sudo chef-client"

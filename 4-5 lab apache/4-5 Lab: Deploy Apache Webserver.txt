@@ -1,0 +1,15 @@
+# 4-5 Lab: Deploy Apache Webserver
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+chef generate cookbook cookbooks/apache
+tree
+chef generate --help
+chef generate recipe cookbooks/apache/server
+tree
+nano cookbooks/apache/recipes/server.rb
+chef exec ruby -c cookbooks/apache/recipes/server.rb
+sudo chef-client -z cookbooks/apache/recipes/server.rb
+curl localhost

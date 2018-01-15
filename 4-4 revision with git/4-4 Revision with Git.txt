@@ -1,0 +1,25 @@
+# 4-4 Revision with Git
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+tree
+which git
+nano cookbooks/workstation/recipes/setup.rb
+sudo chef-client -z cookbooks/workstation/recipes/setup.rb
+cd cookbooks/workstation/
+pwd
+tree
+git init
+ls -a
+git status
+git add .
+git status
+git commit -m "initial workstation cookbook commit"
+git status
+nano recipes/setup.rb
+git status
+git add recipes/setup.rb
+git commit -m "added ntp to setup.rb"
+git status

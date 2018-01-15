@@ -1,0 +1,12 @@
+# 7-3 Understanding ERB
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+tree cookbooks/workstation/
+chef generate --help
+chef generate template --help
+chef generate template cookbooks/workstation/ motd
+tree cookbooks/workstation
+nano cookbooks/workstation/recipes/setup.rb

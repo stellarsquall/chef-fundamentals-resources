@@ -1,0 +1,21 @@
+# 9-3 Your Toolkit
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands from your vagrant or cloud CentOS 7 instance after logging in with 'vagrant ssh'
+
+cd ~
+chef -v
+chef generate --help
+chef --help
+rspec
+tree cookbooks/apache
+chef exec rspec --help
+kitchen --help
+berks --help
+knife --help
+knife client list
+rubocop cookbooks/apache
+chef exec rubocop cookbooks/apache
+foodcritic --help
+chef exec foodcritic --help

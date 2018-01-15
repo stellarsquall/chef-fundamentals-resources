@@ -1,0 +1,25 @@
+# 12-5 Bonus: Run the chef-client on a Schedule
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+chef generate cookbook cookbooks/mychef-client
+ls cookbooks/
+cd cookbooks/mychef-client
+nano metadata.rb
+nano recipes/default.rb
+berks install
+berks upload
+cd ~/chef-repo
+knife node show load-balancer
+knife node run_list set load-balancer "recipe[mychef-client],recipe[myhaproxy]"
+knife node show load-balancer
+vagrant ssh load-balancer
+
+# run these commands on the load-balancer vagrant instance
+
+vagrant@load-balancer$ sudo chef-client
+vagrant@load-balancer$ ps awux | grep chef-client
+vagrant@load-balancer$ exit

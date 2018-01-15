@@ -1,0 +1,15 @@
+# 11-3 Wrapper Cookbooks
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+pwd
+ls cookbooks/
+chef generate cookbook cookbooks/myhaproxy
+ls cookbooks/
+tree cookbooks/myhaproxy
+nano cookbooks/myhaproxy/metadata.rb
+cat Vagrantfile
+nano cookbooks/myhaproxy/recipes/default.rb

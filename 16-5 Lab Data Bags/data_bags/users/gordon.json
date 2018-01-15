@@ -1,0 +1,10 @@
+{
+  "id": "gordon",
+  "comment": "gordon ramsay",
+  "uid": 201,
+  "gid": 0,
+  "home": "/home/gordon",
+  "shell": "/bin/bash",
+  "platform": "centos",
+  "tvshow": "MasterChef"
+}

@@ -1,0 +1,30 @@
+# 15-5 Refine the Load Balancer
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+knife cookbook list
+cd cookbooks/myhaproxy/
+berks upload
+berks install
+berks upload
+knife cookbook list
+vagrant ssh load-balancer
+knife environment show production
+knife search node "*:*"
+knife search node "chef_environment:production"
+cd ~/chef-repo
+nano environments/production.rb
+knife environment from file environments/production.rb
+knife environment show production
+
+
+
+# run these commands on the load-balancer vagrant instance to test the 1.0.1 version of myhaproxy
+
+vagrant@load-balancer$ sudo chef-client
+vagrant@load-balancer$ curl localhost
+vagrant@load-balancer$ curl localhost
+vagrant@load-balancer$ exit

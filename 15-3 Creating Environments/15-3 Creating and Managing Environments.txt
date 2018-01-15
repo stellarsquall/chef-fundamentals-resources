@@ -1,0 +1,36 @@
+# 15-3 Creating and Managing Environments
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+knife search node "*:*"
+knife environment list
+knife environment show _default
+knife environment --help
+ls
+mkdir environments
+cat cookbooks/apache/metadata.rb
+cat cookbooks/myhaproxy/metadata.rb
+nano environments/production.rb
+knife environment from file environments/production.rb
+knife environment list
+knife environment show
+knife environment show production
+knife node environment set web1 production
+knife node show web1
+knife nod environment set load-balancer production
+knife node show load-balancer
+vagrant ssh web1
+vagrant ssh load-balancer
+
+# run these commands on the web1 vagrant instance
+
+vagrant@web1$ sudo chef-client
+vagrant@web1$ exit
+
+# run these commands on the load-balancer vagrant instance
+
+vagrant@load-balancer$ sudo chef-client
+vagrant@load-balancer$ exit

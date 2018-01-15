@@ -1,0 +1,23 @@
+# 15-4 Lab: Assign web2 to an Acceptance Environment
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+ls environments/
+nano environments/acceptance.rb
+ls environments/
+knife environment list
+knife environment from file environments/acceptance.rb
+knife environment list
+knife environment show acceptance
+knife node environment set web2 acceptance
+knife node show web2
+vagrant ssh web2
+
+
+# run these commands on the web2 vagrant instance
+
+vagrant@web2$ sudo chef-client
+vagrant@web2$ exit

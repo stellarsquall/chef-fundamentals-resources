@@ -1,0 +1,28 @@
+# 9-6 Bonus: Test Kitchen
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# these commands are run from the LOCAL machine. 
+# Please note that your machine may not be configured
+# for Test Kitchen development like in the demoed video.
+# https://docs.chef.io/kitchen.html
+# https://kitchen.ci
+
+cd ~
+pwd
+ls
+chef generate --help
+cd apache/
+ls -a
+cat .kitchen.yml
+nano .kitchen.yml
+kitchen list
+kitchen create
+kitchen list
+kitchen login
+kitchen converge
+kitchen login
+kitchen verify
+nano test/recipes/default_test.rb
+kitchen verify
+kitchen destroy

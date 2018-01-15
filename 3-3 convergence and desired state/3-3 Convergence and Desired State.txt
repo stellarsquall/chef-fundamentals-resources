@@ -1,0 +1,15 @@
+# 3-3 Convergence and Desired State commands
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+sudo chef-client --local-mode hello.rb
+cat /hello.txt
+vim /hello.txt
+sudo vim /hello.txt
+cat /hello.txt
+ls -l /hello.txt
+sudo chown vagrant /hello.txt
+ls -l /hello.txt
+sudo chef-client --local-mode hello.rb

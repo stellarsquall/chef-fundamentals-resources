@@ -1,0 +1,18 @@
+# 7-5 Lab Templates
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+tree cookbooks/apache
+chef generate template cookbooks/apache/ index.html
+tree cookbooks/apache
+nano cookbooks/apache/recipes/server.rb
+nano cookbooks/apache/templates/index.html.erb
+sudo chef-client -zr "recipe[apache]"
+curl localhost
+cd cookbooks/apache
+nano metadata.rb
+git status
+git add .
+git commit -m "refactored /var/www/html/index.html file resource to template"

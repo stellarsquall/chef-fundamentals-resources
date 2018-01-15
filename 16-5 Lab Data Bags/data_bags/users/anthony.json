@@ -1,0 +1,10 @@
+{
+  "id": "anthony",
+  "comment": "anthony bourdain",
+  "uid": 200,
+  "gid": 0,
+  "home": "/home/anthony",
+  "shell": "/bin/bash",
+  "platform": "centos",
+  "tvshow": "food network"
+}

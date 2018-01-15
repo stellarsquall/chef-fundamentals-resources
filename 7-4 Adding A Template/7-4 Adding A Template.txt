@@ -1,0 +1,13 @@
+# 7-4 Adding A Template
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+nano cookbooks/workstation/recipes/setup.rb
+sudo chef-client -zr "recipe[workstation]"
+cat /etc/motd
+cd cookbooks/workstation
+nano metadata.rb
+git add .
+git commit -m "refactored motd file with a template resource"

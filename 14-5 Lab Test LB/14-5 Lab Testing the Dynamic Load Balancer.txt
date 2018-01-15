@@ -1,0 +1,24 @@
+# 14-5 Lab: Testing the Dynamic Load Balancer
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+pwd
+cd cookbooks/myhaproxy/
+berks upload
+berks install
+berks upload
+vagrant ssh-config
+knife ssh localhost 'sudo chef-client' -m -x vagrant -i /PATH/TO/LB_KEY/ -p LB_PORT
+knife node show load-balancer -a haproxy.members
+
+# or you can run these commands on the load-balancer
+# vagrant instance to converge and test
+
+vagrant ssh load-balancer
+vagrant@load-balancer$ sudo chef-client
+vagrant@load-balancer$ curl localhost
+vagrant@load-balancer$ curl localhost
+vagrant@load-balancer$ exit

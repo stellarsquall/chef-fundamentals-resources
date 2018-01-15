@@ -1,0 +1,19 @@
+# 6-2 An Object Called Node
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+# run these commands from your vagrant or cloud CentOS 7 instance
+
+cd ~
+hostname
+hostname -I
+cat /proc/cpuinfo
+cat /proc/meminfo
+nano cookbooks/workstation/recipes/setup.rb
+sudo chef-client -zr "recipe[workstation]"
+cat /etc/motd
+ohai
+ohai ipaddress
+ohai hostname
+ohai memory
+ohai memory/total
+ohai cpu/0/mhz

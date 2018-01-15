@@ -1,0 +1,20 @@
+# 13-4 Lab: Create the Load Balancer Role
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+ls roles/
+
+
+
+# run these commands on the web1 vagrant instance
+
+vagrant@web1$ sudo chef-client
+vagrant@web1$ exit
+
+# run these commands on the web2 vagrant instance
+
+vagrant@web2$ sudo chef-client
+vagrant@web2$ exit

@@ -1,0 +1,42 @@
+# 1-5 Configuring Your Development Environment - Vagrant and VirtualBox
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+
+# run these commands to ensure you're setup properly.
+# Commands are demonstrated on a MacOS terminal. If on a Windows machine, commands
+# for navigation and file manipulation may vary.
+# If unable to locate any of the tools, please ensure that your system path is 
+# properly configured as documented in the setup pdf.
+
+# all commands assume working out of the home directory, ~/
+
+# Run these commands on your local machine
+cd ~
+chef --version
+chef -v
+vboxmanage --version
+vagrant --version
+mkdir chef
+cd chef/
+pwd
+vagrant box add bento/centos-7.2 --provider=virtualbox
+vagrant init bento/centos-7.2
+ls
+cat Vagrantfile
+vagrant up
+vagrant status
+vagrant ssh-config
+vagrant ssh
+
+# Run these commands on the vagrant instance after running 'vagrant ssh'
+vagrant@localhost$ curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 0.18.30
+vagrant@localhost$ chef --version
+vagrant@localhost$ sudo yum install nano -y
+vagrant@localhost$ sudo yum install vim -y
+vagrant@localhost$ exit
+
+
+# when you're done with the exercises for the moment, suspend the machine state
+vagrant suspend
+
+# or destroy the virtual machine
+vagrant destroy --force
