@@ -1,0 +1,20 @@
+# 10-6 Lab: Bootstrap a Webserver
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+vagrant status
+vagrant ssh-config
+knife bootstrap localhost --ssh-port PORT --ssh-user vagrant --sudo --identity-file /PATH/TO/KEY -N web1
+knife node list
+knife node show web1
+knife node run_list add web1 "recipe[workstation],recipe[apache]"
+knife node show web1
+vagrant ssh web1
+
+# run these commands on the web1 vagrant instance
+
+vagrant@web1$ sudo chef-client
+vagrant@web1$ curl localhost
