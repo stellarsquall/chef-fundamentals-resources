@@ -3,22 +3,13 @@
 # the information added to the node object at the beginning of a chef-client run.
 
 # the vagrant-ohai plugin modifes the node['ipaddress'] attribute gathered by ohai
-# to match what we define in the Vagrant file. Otherwise ohai will detect the internal
+# to match what we define in the Vagrantfile. Otherwise ohai will detect the internal
 # ipaddress assigned by vagrant. This allows our load balancer to work with the
 # virtual instances we manage later in the class.
 #
 # @see https://github.com/avishai-ish-shalom/vagrant-ohai
 # @see https://docs.chef.io/ohai_custom.html
 #
-
-# execute sudo /etc/init.d/network restart to reload the networking interfaces
-# this problem seems confined to Vagrant 1.9.1
-# see vagrant issue https://github.com/mitchellh/vagrant/issues/8115
-
-execute 'reload network interfaces' do
-  command 'sudo /etc/init.d/network restart'
-  not_if "ifconfig | grep 'eth0'"
-end
 
 # set plugin path for ohai if not already defined in /etc/chef/client.rb
 # this is always set on a subsequent chef-client run because of ruby_block[configure ohai plugin path]
