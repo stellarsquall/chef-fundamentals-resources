@@ -1,7 +1,7 @@
 # ~/chef-repo/cookbooks/myhaproxy/recipes/default.rb
 #
 # Cookbook Name:: myhaproxy
-# Recipe:: default
+# Recipe:: cloud_default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 #
