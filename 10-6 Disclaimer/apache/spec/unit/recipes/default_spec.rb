@@ -1,3 +1,4 @@
+# ~/cookbooks/apache/spec/unit/recipes/default_spec.rb
 #
 # Cookbook Name:: apache
 # Spec:: default
@@ -15,7 +16,7 @@ describe 'apache::default' do
 
 
     it 'installs the correct package' do
-      expect(chef_run).to install_package('apache2')
+      expect(chef_run).to install_package('httpd')
     end
 
     it 'creates an default html file' do
@@ -23,11 +24,11 @@ describe 'apache::default' do
     end
 
     it 'starts the service' do
-      expect(chef_run).to start_service('apache2')
+      expect(chef_run).to start_service('httpd')
     end
 
     it 'enables the service' do
-      expect(chef_run).to enable_service('apache2')
+      expect(chef_run).to enable_service('httpd')
     end
   end
 end
