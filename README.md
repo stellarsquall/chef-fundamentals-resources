@@ -14,6 +14,11 @@ You will need Git installed to clone the resources down. Run git clone where you
 git clone https://github.com/stellarsquall/chef-fundamentals-resources.git
 ```
 
+## Releases
+
+Code is periodically compiled into releases to reflect the state of published video demos. Live demos should reflect the current codebase.
+Previous releases contain older versions of the codebase that may not function with newer versions of ChefDK or chef-client.
+
 ## Contributing
 
 Feel free to submit open issues on the resources, no pull requests please.
