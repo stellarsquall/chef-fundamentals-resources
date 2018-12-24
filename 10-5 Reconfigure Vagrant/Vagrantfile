@@ -11,7 +11,7 @@ NODE_SCRIPT = <<EOF.freeze
   yum -y install ntp
   systemctl start ntpd
   systemctl enable ntpd
-  curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 12.21.4
+  curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 14
 EOF
 
 def set_hostname(server)
