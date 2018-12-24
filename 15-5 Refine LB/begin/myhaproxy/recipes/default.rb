@@ -1,26 +1,29 @@
 #
-# Cookbook Name:: myhaproxy
+# Cookbook:: myhaproxy
 # Recipe:: default
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
+# Copyright:: 2018, The Authors, All Rights Reserved.
 
-all_web_nodes = search('node',"role:web")
+haproxy_install 'package'
 
-members = []
-
-all_web_nodes.each do |web_node|
-
-  member = {
-  	'hostname'  => web_node['hostname'],
-  	'ipaddress' => web_node['ipaddress'],
-  	'port' => 80,
-  	'ssl_port' => 80
-  }
-
-  members.push(member)
-
+haproxy_frontend 'http-in' do
+  bind '*:80'
+  default_backend 'servers'
 end
 
-node.default['haproxy']['members'] = members
+all_web_nodes = search("node","role:web")
 
-include_recipe "haproxy::manual"
+servers = []
+
+all_web_nodes.each do |web_node|
+  server = "#{web_node['hostname']} #{web_node['ipaddress']}:80 maxconn 32"
+  servers.push(server)
+end
+
+haproxy_backend 'servers' do
+	server servers
+end
+
+haproxy_service 'haproxy' do
+	subscribes :reload, 'template[/etc/haproxy/haproxy.cfg]', :immediately
+end

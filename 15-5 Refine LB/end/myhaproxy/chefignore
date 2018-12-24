@@ -55,6 +55,7 @@ examples/*
 Guardfile
 Procfile
 .kitchen*
+kitchen.yml*
 .rubocop.yml
 spec/*
 Rakefile
@@ -82,19 +83,20 @@ Berksfile.lock
 cookbooks/*
 tmp
 
+# Bundler #
+###########
+vendor/*
+
+# Policyfile #
+##############
+Policyfile.rb
+Policyfile.lock.json
+
 # Cookbooks #
 #############
 CONTRIBUTING*
 CHANGELOG*
 TESTING*
-MAINTAINERS.toml
-
-# Strainer #
-############
-Colanderfile
-Strainerfile
-.colander
-.strainer
 
 # Vagrant #
 ###########
