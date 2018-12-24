@@ -1,6 +1,6 @@
 #
 # Cookbook:: myhaproxy
-# Recipe:: dynamic
+# Recipe:: default_cloud
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
@@ -18,7 +18,7 @@ all_web_nodes = search("node","role:web")
 servers = []
 
 all_web_nodes.each do |web_node|
-  server = "#{web_node['hostname']} #{web_node['ipaddress']}:80 maxconn 32"
+  server = "#{web_node['cloud']['public_hostname']} #{web_node['cloud']['public_ipv4']}:80 maxconn 32"
   servers.push(server)
 end
 
@@ -29,7 +29,3 @@ end
 haproxy_service 'haproxy' do
 	subscribes :reload, 'template[/etc/haproxy/haproxy.cfg]', :immediately
 end
-
-
-
-
