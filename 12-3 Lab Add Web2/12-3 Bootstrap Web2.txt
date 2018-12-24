@@ -6,15 +6,11 @@
 
 cd ~/chef-repo
 vagrant ssh-config
-knife bootstrap localhost --ssh-port WEB2_PORT --ssh-user vagrant --sudo --identity-file /PATH/TO/WEB2_KEY -N web2 --run-list "recipe[workstation],recipe[apache]"
+knife bootstrap localhost --ssh-port WEB2_PORT --ssh-user vagrant --identity-file /PATH/TO/WEB2_KEY --sudo -N web2 --run-list "recipe[workstation],recipe[apache]"
 vagrant ssh web2
-cat Vagrantfile
-nano cookbooks/myhaproxy/recipes/default.rb
-nano cookbooks/myhaproxy/metadata.rb
 cd cookbooks/myhaproxy
 berks install
 berks upload
-cd ~/chef-repo
 knife cookbook list
 knife cookbook show myhaproxy
 vagrant ssh load-balancer
