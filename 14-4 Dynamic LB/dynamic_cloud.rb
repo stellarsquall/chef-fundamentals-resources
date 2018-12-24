@@ -18,7 +18,7 @@ all_web_nodes = search("node","role:web")
 servers = []
 
 all_web_nodes.each do |web_node|
-  server = "#{web_node['cloud.public_hostname']} #{web_node['cloud.public_ipv4']}:80 maxconn 32"
+  server = "#{web_node['cloud']['public_hostname']} #{web_node['cloud][public_ipv4']}:80 maxconn 32"
   servers.push(server)
 end
 
