@@ -7,12 +7,12 @@
 cd ~/chef-repo
 pwd
 cd cookbooks/myhaproxy/
-berks upload
-berks install
+ls
 berks upload
 vagrant ssh-config
-knife ssh localhost 'sudo chef-client' -m -x vagrant -i /PATH/TO/LB_KEY/ -p LB_PORT
-knife node show load-balancer -a haproxy.members
+knife ssh localhost -m 'sudo chef-client' -x vagrant -i /PATH/TO/LB_KEY/ -p LB_PORT
+vagrant ssh load-balancer
+knife node show load-balancer -a cookbooks
 
 # or you can run these commands on the load-balancer
 # vagrant instance to converge and test
@@ -22,3 +22,9 @@ vagrant@load-balancer$ sudo chef-client
 vagrant@load-balancer$ curl localhost
 vagrant@load-balancer$ curl localhost
 vagrant@load-balancer$ exit
+
+knife node show web1 -a ipaddress
+knife node show web1 -a hostname
+knife node show web1 -a cloud
+knife node show web1 -a cloud.public_hostname
+knife node show web1 -a cloud.public_ipv4
