@@ -1,0 +1,30 @@
+# 11-5 Berkshelf
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+berks --help
+cd cookbooks/myhaproxy/
+tree
+cat Berksfile
+cat metadata.rb
+clear
+pwd
+clear
+ls
+berks install
+cd ..
+ls
+ls ~/.berkshelf/cookbooks/
+cd myhaproxy/
+berks upload
+cookstyle .
+berks upload
+knife cookbook list
+berks upload
+vim metadata.rb
+berks upload
+berks --force
+ls
+cat Berksfile.lock
