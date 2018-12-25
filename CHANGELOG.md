@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the documentation, which will appear under Releases
 
+## v1.2.0 (2018.12.24)
+
+- Updated code to match patched video lectures released 12/24/18. Major update to haproxy exercise.
+
 ## v1.1.0 (2018.12.20)
 
 - Added begin/end states to relevant videos to reflect changes made during demos
