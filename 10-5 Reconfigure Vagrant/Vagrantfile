@@ -22,6 +22,7 @@ Vagrant.configure(2) do |config|
 
  config.vm.define 'web1' do |n|
     n.vm.box = 'bento/centos-7.2'
+    n.vm.box_url = 'https://vagrantcloud.com/bento/boxes/centos-7.2'
     n.vm.box_version = '2.2.9'
     n.vm.hostname = 'web1'
     n.vm.network :private_network, ip: '192.168.10.43', nic_type: "virtio"
@@ -31,6 +32,7 @@ Vagrant.configure(2) do |config|
 
  config.vm.define 'web2' do |n|
     n.vm.box = 'bento/centos-7.2'
+    n.vm.box_url = 'https://vagrantcloud.com/bento/boxes/centos-7.2'
     n.vm.box_version = '2.2.9'
     n.vm.hostname = 'web2'
     n.vm.network :private_network, ip: '192.168.10.44', nic_type: "virtio"
@@ -40,6 +42,7 @@ Vagrant.configure(2) do |config|
 
  config.vm.define 'load-balancer' do |n|
     n.vm.box = 'bento/centos-7.2'
+    n.vm.box_url = 'https://vagrantcloud.com/bento/boxes/centos-7.2'
     n.vm.box_version = '2.2.9'
     n.vm.hostname = 'load-balancer'
     n.vm.network "forwarded_port", guest: 80, host: 9000
