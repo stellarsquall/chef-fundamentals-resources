@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the documentation, which will appear under Releases
 
+## v1.2.1 (2019.01.09)
+
+- Patched Vagrantfile in video 10-5: Reconfigure Your Vagrant Environment to set config.vm.box_url for each machine to vagrantcloud.com bento box. This will hopefully solve some student's issues with resolving the box.
+
+- See https://github.com/Seravo/wordpress/issues/84
+
 ## v1.2.0 (2018.12.24)
 
 - Updated code to match patched video lectures released 12/24/18. Major update to haproxy exercise.
