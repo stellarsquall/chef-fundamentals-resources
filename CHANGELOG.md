@@ -4,6 +4,10 @@ This file is used to list changes made in each version of the documentation, whi
 
 ## v1.2.1 (2019.01.09)
 
+- Fixed submodule for myhaproxy begin/end folders in 11-4 Adding Webserver Members.
+
+## v1.2.1 (2019.01.09)
+
 - Patched Vagrantfile in video 10-5: Reconfigure Your Vagrant Environment to set config.vm.box_url for each machine to vagrantcloud.com bento box. This will hopefully solve some student's issues with resolving the box.
 
 - See https://github.com/Seravo/wordpress/issues/84
