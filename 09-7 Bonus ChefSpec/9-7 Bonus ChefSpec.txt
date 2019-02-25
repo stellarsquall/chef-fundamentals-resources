@@ -1,5 +1,5 @@
 # 9-7 Bonus: ChefSpec
-# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# this command list is provided to accompany the demos in the Chef Fundamentals course
 # commands that involve editing files assume nano as the text editor
 
 # these commands are run from the LOCAL machine. 

@@ -1,5 +1,5 @@
 # 1-6 Configuring Your Development Environment - Amazon EC2
-# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# this command list is provided to accompany the demos in the Chef Fundamentals course
 
 # run these commands to ensure you're setup properly.
 # Commands are demonstrated on a MacOS terminal. If on a Windows machine, commands

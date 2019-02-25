@@ -1,5 +1,5 @@
 # 1-5 Configuring Your Development Environment - Vagrant and VirtualBox
-# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# this command list is provided to accompany the demos in the Chef Fundamentals course
 
 # run these commands to ensure you're setup properly.
 # Commands are demonstrated on a MacOS terminal. If on a Windows machine, commands

@@ -1,5 +1,5 @@
 # 15-5 Refine the Load Balancer
-# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# this command list is provided to accompany the demos in the Chef Fundamentals course
 # commands that involve editing files assume nano as the text editor
 
 # run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'

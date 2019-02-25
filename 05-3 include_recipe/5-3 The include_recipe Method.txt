@@ -1,5 +1,5 @@
 # 5-3 The include_recipe Method
-# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# this command list is provided to accompany the demos in the Chef Fundamentals course
 # commands that involve editing files assume nano as the text editor
 # run these commands from your vagrant or cloud CentOS 7 instance
 
